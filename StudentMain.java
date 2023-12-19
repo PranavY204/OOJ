@@ -43,6 +43,7 @@ class Student{
 			else if (subject[i].SubjectMarks < 40) subject[i].SubjectMarks = 0;	
 			subject[i].grade = (subject[i].SubjectMarks / 10) + 1;
 			if (subject[i].grade == 11) subject[i].grade = 10;
+			if (subject[i].grade == 1) subject[i].grade = 0;
 			if (subject[i].SubjectMarks >= 40 && subject[i].SubjectMarks < 50) subject[i].grade = 4;
 			else if (subject[i].SubjectMarks >= 50 && subject[i].SubjectMarks < 55) subject[i].grade = 5;
 			else if (subject[i].SubjectMarks >= 55 && subject[i].SubjectMarks < 60) subject[i].grade = 6;
