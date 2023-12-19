@@ -50,6 +50,7 @@ public class QuadraticMain{
     public static void main(String args[])
 	{
 		Quadratic q = new Quadratic();
+		System.out.println("Pranav Y - 1BM22CS204");
 		q.getd();
 		q.compute();	
 	}	
