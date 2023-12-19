@@ -66,6 +66,7 @@ class Student{
 class StudentMain{
 	public static void main(String args[]){
 		Student student = new Student();
+		System.out.println("Pranav Y - 1BM22CS204");
 		student.getStudentDetails();
 		student.getMarks();
 		System.out.println("Name of student is: " + student.name);
