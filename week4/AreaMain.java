@@ -41,6 +41,7 @@ class Circle extends Shape{
 
 class AreaMain{
 	public static void main(String args[]){
+		System.out.println("Pranav Y - 1BM22CS204");
 		Rectangle r = new Rectangle();
 		Triangle tr = new Triangle();
 		Circle c = new Circle();
