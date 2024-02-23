@@ -8,18 +8,22 @@ class WrongAge extends Exception{
 }
 class InputScanner {
     Scanner sc = new Scanner(System.in);
-    int Age;
+    int FatherAge, SonAge;
     InputScanner(){
         if (this.getClass() == Father.class){
             System.out.println("Enter father age: ");
-            Age = sc.nextInt();
-        } 
+            FatherAge = sc.nextInt();
+        } else if (this.getClass() == Son.class){
+            System.out.println("Enter son age: ");
+            SonAge = sc.nextInt();
+        }
     }
 }
 class Father extends InputScanner{
     int FatherAge;
     Father() throws WrongAge{
-        FatherAge = Age;
+        FatherAge = super.FatherAge;
+        // System.out.println("Father Age: " + FatherAge);
         if (FatherAge < 0){
             throw new WrongAge("Age cannot be < 0 for a person");
         } 
@@ -30,11 +34,12 @@ class Father extends InputScanner{
 }
 class Son extends Father{
     int SonAge;
-    Son() throws WrongAge{
-        super();
-        System.out.println("Enter son age: ");
-        SonAge = sc.nextInt();
-        if (FatherAge < SonAge){
+    Son(Father f) throws WrongAge{
+        SonAge = super.SonAge;
+        // System.out.println("Enter son age: ");
+        // SonAge = sc.nextInt();
+        // System.out.println("Father Age: " + f.FatherAge + "; Son Age: " + SonAge);
+        if (f.FatherAge < SonAge){
             throw new WrongAge("Age cannot be greater for son");
         } else if (SonAge < 0){
             throw new WrongAge("Age cannot be < 0 for a person");
@@ -48,7 +53,7 @@ class FatherMain{
     public static void main(String[] args) {
         try{
             Father father = new Father();
-            Son son = new Son();
+            Son son = new Son(father);
             father.display();
             son.display();
         }
